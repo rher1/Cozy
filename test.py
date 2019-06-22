@@ -5,8 +5,6 @@ import busio
 import digitalio
 import adafruit_max31855
 
-# Hi Roger!
-
 def init():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(0, GPIO.OUT)
