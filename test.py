@@ -60,7 +60,5 @@ while True:
     time.sleep(0.05)
     if tempF <= desired_temp:
         print("Now Heating...")
-        heating()
     else:
         print("Now Cooling...")
-        cooling()
