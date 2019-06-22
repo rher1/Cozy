@@ -49,6 +49,9 @@ cs = digitalio.DigitalInOut(board.D5)
 
 max31855=adafruit_max31855.MAX31855(spi, cs)
 
+# User Input
+desired_temp = int(input("Enter your desired temperature: "))
+
 while True:
     tempC = max31855.temperature
     tempF = tempC * 9 / 5 + 32
