@@ -59,6 +59,8 @@ while True:
     print('Temperature: {} C {} F '.format(tempC, tempF))
     time.sleep(0.05)
     if tempF <= desired_temp:
+        
+        GPIO.cleanup()
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(0, GPIO.OUT)
         GPIO.setup(2, GPIO.OUT)
@@ -79,9 +81,10 @@ while True:
         GPIO.output(24, False)
         GPIO.output(25, True)
         GPIO.output(27, True)
-        GPIO.cleanup()
         print("Now Heating...")
     else:
+
+        GPIO.cleanup()
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(0, GPIO.OUT)
         GPIO.setup(2, GPIO.OUT)
@@ -102,5 +105,4 @@ while True:
         GPIO.output(24, True)
         GPIO.output(25, False)
         GPIO.output(27, False)
-        GPIO.cleanup()
         print("Now Cooling...")
