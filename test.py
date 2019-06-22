@@ -70,6 +70,7 @@ while True:
         GPIO.output(25, True)
         GPIO.output(27, True)
         GPIO.cleanup()
+        del tempC
         print("Now Heating...")
     else:
         print("Now Cooling...")
