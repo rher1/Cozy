@@ -59,10 +59,8 @@ while True:
     print('Temperature: {} C {} F '.format(tempC, tempF))
     time.sleep(0.05)
     if tempF <= desired_temp:
-        print('Temperature: {} C {} F '.format(tempC, tempF))
         print("Now Heating...")
         heating()
     else:
-        print('Temperature: {} C {} F '.format(tempC, tempF))
         print("Now Cooling...")
         cooling()
