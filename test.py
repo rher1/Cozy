@@ -59,8 +59,12 @@ while True:
     print('Temperature: {} C {} F '.format(tempC, tempF))
     time.sleep(0.05)
     if tempF <= desired_temp:
+        import RPi.GPIO as GPIO
+        import board
         heating()
         print("Now Heating...")
     else:
+        import RPi.GPIO as GPIO
+        import board
         cooling()
         print("Now Cooling...")
