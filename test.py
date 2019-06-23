@@ -56,7 +56,7 @@ try:
         time.sleep(0.05)
         if tempF <= desired_temp:
             heating()
-        else:
+        if tempC >= desired_temp:
             cooling()
-except KeyboardInterrupt:
+finally:
     GPIO.cleanup()
