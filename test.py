@@ -26,6 +26,7 @@ def heating():
     GPIO.output(24, False)
     GPIO.output(25, True)
     GPIO.output(27, True)
+    print("Now Heating...")
 
 
 def cooling():
@@ -38,6 +39,7 @@ def cooling():
     GPIO.output(24, True)
     GPIO.output(25, False)
     GPIO.output(27, False)
+    print("Now Cooling...")
 
 
 # User Input
@@ -56,9 +58,7 @@ try:
         time.sleep(0.05)
         if tempF <= desired_temp:
             heating()
-            print("Now Heating...")
         else:
             cooling()
-            print("Now Cooling...")
 finally:
     GPIO.cleanup()
