@@ -54,8 +54,8 @@ while True:
     print('Temperature: {} C {} F '.format(tempC, tempF))
     time.sleep(0.05)
     if tempF <= desired_temp:
-        heating(2)
+        heating()
     else:
-        cooling(2)
+        cooling()
 
 GPIO.cleanup()
