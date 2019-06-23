@@ -57,10 +57,10 @@ try:
         print('Temperature: {} C {} F '.format(tempC, tempF))
         time.sleep(0.05)
         if tempF <= desired_temp:
-            GPIO.output(27, False)
+            GPIO.output(27,False)
             print("Now Heating...")
         else:
-            GPIO.output(27, True)
+            GPIO.output(27,True)
             print("Now Cooling...")
 finally:
     GPIO.cleanup()
