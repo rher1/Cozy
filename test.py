@@ -16,30 +16,28 @@ GPIO.setup(24, GPIO.OUT)
 GPIO.setup(25, GPIO.OUT)
 GPIO.setup(27, GPIO.OUT)
 
-    #def heating():
-    #init()
-    #GPIO.output(0, False)
-    #GPIO.output(2, True)
-    #GPIO.output(3, False)
-    #GPIO.output(4, True)
-    #GPIO.output(22, False)
-    #GPIO.output(23, True)
-    #GPIO.output(24, False)
-    #GPIO.output(25, True)
-    #GPIO.output(27, True)
+def heating():
+    GPIO.output(0, False)
+    GPIO.output(2, True)
+    GPIO.output(3, False)
+    GPIO.output(4, True)
+    GPIO.output(22, False)
+    GPIO.output(23, True)
+    GPIO.output(24, False)
+    GPIO.output(25, True)
+    GPIO.output(27, True)
 
 
-    #def cooling():
-    #init()
-    #GPIO.output(0, True)
-    #GPIO.output(2, False)
-    #GPIO.output(3, True)
-    #GPIO.output(4, False)
-    #GPIO.output(22, True)
-    #GPIO.output(23, False)
-    #GPIO.output(24, True)
-    #GPIO.output(25, False)
-    #GPIO.output(27, False)
+def cooling():
+    GPIO.output(0, True)
+    GPIO.output(2, False)
+    GPIO.output(3, True)
+    GPIO.output(4, False)
+    GPIO.output(22, True)
+    GPIO.output(23, False)
+    GPIO.output(24, True)
+    GPIO.output(25, False)
+    GPIO.output(27, False)
 
 
 # User Input
@@ -57,10 +55,10 @@ try:
         print('Temperature: {} C {} F '.format(tempC, tempF))
         time.sleep(0.05)
         if tempF <= desired_temp:
-            GPIO.output(27,False)
+            heating()
             print("Now Heating...")
         else:
-            GPIO.output(27,True)
+            cooling()
             print("Now Cooling...")
 finally:
     GPIO.cleanup()
