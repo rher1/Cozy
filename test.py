@@ -4,6 +4,7 @@ import board
 import busio
 import digitalio
 import adafruit_max31855
+from sys import exit
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(0, GPIO.OUT)
@@ -60,3 +61,4 @@ try:
             cooling()
 finally:
     GPIO.cleanup()
+    exit()
