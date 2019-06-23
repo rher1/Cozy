@@ -57,7 +57,7 @@ try:
         time.sleep(0.05)
         if tempF <= desired_temp:
             heating()
-        if tempC >= desired_temp:
+        else:
             cooling()
 finally:
     GPIO.cleanup()
