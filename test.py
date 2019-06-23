@@ -27,7 +27,7 @@ def heating():
     GPIO.output(25, True)
     GPIO.output(27, True)
     print("Now Heating...")
-
+    GPIO.cleanup()
 
 def cooling():
     GPIO.output(0, True)
@@ -40,6 +40,7 @@ def cooling():
     GPIO.output(25, False)
     GPIO.output(27, False)
     print("Now Cooling...")
+    GPIO.cleanup()
 
 
 # User Input
