@@ -64,4 +64,4 @@ try:
             cooling()
             print("Now Cooling...")
 finally:
-GPIO.cleanup()
+    GPIO.cleanup()
