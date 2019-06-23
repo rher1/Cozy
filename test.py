@@ -42,7 +42,6 @@ def cooling():
     print("Now Cooling...")
     GPIO.cleanup()
 
-
 # User Input
 desired_temp = int(input("Enter your desired temperature: "))
 
@@ -51,12 +50,15 @@ cs = digitalio.DigitalInOut(board.D5)
 
 max31855=adafruit_max31855.MAX31855(spi, cs)
 
-while True:
-    tempC = max31855.temperature
-    tempF = tempC * 9 / 5 + 32
-    print('Temperature: {} C {} F '.format(tempC, tempF))
-    time.sleep(0.05)
-    if tempF <= desired_temp:
-        heating()
-    else:
-        cooling()
+try:
+    while True:
+        tempC = max31855.temperature
+        tempF = tempC * 9 / 5 + 32
+        print('Temperature: {} C {} F '.format(tempC, tempF))
+        time.sleep(0.05)
+        if tempF <= desired_temp:
+            heating()
+        else:
+            cooling()
+finally:
+    GPIO.cleanup()
