@@ -27,7 +27,8 @@ def heating():
     GPIO.output(19, False)
     GPIO.output(26, True)
     GPIO.output(16, False)
-    print("Now Heating...")
+    a = "Now Heating..."
+    print(a, end="\r")
 
 def cooling():
     GPIO.output(17, True)
@@ -39,7 +40,8 @@ def cooling():
     GPIO.output(19, True)
     GPIO.output(26, False)
     GPIO.output(16, True)
-    print("Now Cooling...")
+    b = "Now Cooling..."
+    print(b, end="\r")
 
 # User Input
 desired_temp = int(input("Enter your desired temperature: "))
