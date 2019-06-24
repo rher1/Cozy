@@ -53,7 +53,7 @@ try:
     while True:
         tempC = max31855.temperature
         tempF = tempC * 9 / 5 + 32
-        print('Temperature: {} C {} F '.format(tempC, tempF), end="\r")
+        print('Temperature: {} C {} F '.format(tempC, tempF)
         time.sleep(0.05)
         if tempF <= desired_temp:
             heating()
