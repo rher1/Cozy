@@ -53,7 +53,7 @@ try:
     while True:
         tempC = max31855.temperature
         tempF = tempC * 9 / 5 + 32
-        print('Temperature: {} C {} F '.format(tempC, tempF)
+        print('Temperature: {} C {} F '.format(tempC, tempF),end="\r")
         time.sleep(0.05)
         if tempF <= desired_temp:
             heating()
@@ -61,4 +61,3 @@ try:
             cooling()
 finally:
     GPIO.cleanup()
-    exit()
