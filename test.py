@@ -56,10 +56,12 @@ try:
         if tempF <= desired_temp:
             heating()
             a = "Now Heating..."
-            print(c, a, end="\r", flush=True)
+            print(c, end="\r", flush=True)
+            print(a, end="\r", flush=True)
         else:
             cooling()
             b = "Now Cooling..."
-            print(c, b, end="\r", flush=True)
+            print(c, end="\r", flush=True)
+            print(b, end="\r", flush=True)
 finally:
     GPIO.cleanup()
