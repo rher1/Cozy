@@ -57,7 +57,9 @@ try:
         time.sleep(0.05)
         if tempF <= desired_temp:
             heating()
+            print("c, a, end="\r", flush=True)
         else:
             cooling()
+            print("c, b, end="\r", flush=True)
 finally:
     GPIO.cleanup()
