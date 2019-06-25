@@ -12,7 +12,6 @@ welcome_message = Text(app, text="Welcome to my app", size=40, font="Times new r
 my_name = TextBox(app, width=30)
 update_text = PushButton(app, command=say_my_name, text="Display my name")
 text_size = Slider(app, command=change_text_size, start=10, end=80)
-my_cat = Picture(app, image="cat.gif")
 
 row_choice = ButtonGroup(app, options=[ ["Front", "F"], ["Middle", "M"],["Back", "B"] ],
                          selected="M", horizontal=True, grid=[1,2], align="left")
