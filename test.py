@@ -28,7 +28,6 @@ def heating():
     GPIO.output(26, True)
     GPIO.output(16, False)
     a = "Now Heating..."
-    print(a, end="\r", flush=True)
 
 def cooling():
     GPIO.output(17, True)
@@ -41,7 +40,6 @@ def cooling():
     GPIO.output(26, False)
     GPIO.output(16, True)
     b = "Now Cooling..."
-    print(b, end="\r", flush=True)
 
 # User Input
 desired_temp = int(input("Enter your desired temperature: "))
@@ -55,7 +53,7 @@ try:
     while True:
         tempC = max31855.temperature
         tempF = tempC * 9 / 5 + 32
-        print('Temperature: {} C {} F '.format(tempC, tempF),end="\r", flush=True)
+        c = "Temperature: {} C {} F ".format(tempC, tempF)
         time.sleep(0.05)
         if tempF <= desired_temp:
             heating()
